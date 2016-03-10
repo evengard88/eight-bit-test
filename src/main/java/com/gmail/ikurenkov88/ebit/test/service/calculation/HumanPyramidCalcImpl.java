@@ -69,6 +69,7 @@ public class HumanPyramidCalcImpl implements HumanPyramidCalc {
     }
 
     static class PyramidTaskFactory {
+        //TODO: think of a better cache implementation, something like Guava Cache. Weak Reference support could be added
         static protected Map<AbstractMap.SimpleImmutableEntry<Integer, Integer>, PyramidTask> taskMap = new ConcurrentHashMap<>();
 
         static public PyramidTask getTask(double weight, int level, int index) {
